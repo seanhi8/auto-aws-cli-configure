@@ -1,0 +1,48 @@
+✅ 使用方法
+保存为 PowerShell 脚本文件
+例如 check-and-install-aws.ps1
+
+右键选择“使用 PowerShell 运行”，或在终端中运行：
+powershell -ExecutionPolicy Bypass -File .\check-and-install-aws.ps1
+
+📝 注意事项
+Windows 可能需要你确认 UAC 提示或运行权限
+如果运行提示权限不足，可右键用管理员身份打开 PowerShell
+如果 AWS CLI 安装后仍提示未识别命令，可重启终端或重新登录
+
+------------------------------------------------------------------------------
+
+在 Windows 上直接双击运行的 .bat 批处理文件，执行目标脚本。
+
+✅ 步骤说明
+.bat 文件双击后调用 PowerShell 运行主脚本
+PowerShell 脚本执行如下流程：
+检查并安装 AWS CLI 和 SSM 插件
+检查是否配置 AWS 凭证（自动引导 aws configure）
+检查是否成功认证，并输出 OK / NO
+
+🗂️ 文件结构建议
+aws-env-check/
+├── run-aws-env-check.bat          👈 双击这个
+└── check-and-install-aws.ps1      👈 主逻辑脚本
+📄 check-and-install-aws.ps1
+（这就是之前写的脚本，内容完全一致）
+
+✅ 可复制上面内容保存为 check-and-install-aws.ps1
+
+🖱️ run-aws-env-check.bat 内容如下：
+@echo off
+title AWS 环境检查脚本
+echo.
+echo 正在启动 AWS CLI 环境检测脚本...
+echo 请勿关闭此窗口。
+powershell -ExecutionPolicy Bypass -File "%~dp0check-and-install-aws.ps1"
+pause
+
+🧪 使用方式
+把这两个文件放在同一个文件夹中（如 aws-env-check）
+双击 run-aws-env-check.bat
+脚本会自动：
+检测 AWS CLI / SSM 插件
+若缺失则下载安装
+检查 aws configure 状态并验证访问权限
