@@ -1,0 +1,11 @@
+使用步骤
+保存脚本为 Connect-EC2-SSM.ps1
+打开 PowerShell，进入脚本所在目录
+运行：
+.\Connect-EC2-SSM.ps1
+按提示输入 Region，选择实例，连接即可
+
+前提条件
+AWS CLI 已配置凭证且权限允许 DescribeInstances 和 SSM StartSession
+目标 EC2 实例安装并启动了 SSM Agent，且允许通过 Session Manager 连接
+PowerShell 有权限执行脚本（执行策略需允许运行）
