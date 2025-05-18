@@ -1,0 +1,22 @@
+✅ 脚本功能（适用于 Linux / Mac / Windows WSL）
+
+获取你的 AWS 账号中 IAM 用户的 MFA 设备 ARN
+提示你输入 6 位验证码
+调用 aws sts get-session-token
+自动将返回的临时凭证写入 ~/.aws/credentials 的 default 配置
+输出登录是否成功
+
+🧩 依赖
+AWS CLI 已安装并正确配置基本访问凭证（用于获取 MFA）
+安装了 jq（JSON 解析器）
+安装 jq 示例（Ubuntu/Debian）：
+sudo apt install jq
+
+🧪 使用方法
+chmod +x inject-mfa.sh
+./inject-mfa.sh
+
+✅ MFA 后的 AWS CLI 使用说明
+获取的临时 token 默认持续 24 小时
+你可以在这段时间内用 AWS CLI 正常访问资源
+之后重新运行该脚本再输入新的验证码即可
