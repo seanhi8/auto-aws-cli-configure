@@ -1,0 +1,17 @@
+✅ 功能一览
+自动识别 Linux 发行版（yum / dnf / apt）
+
+检查并安装：
+  AWS CLI v2
+  Session Manager Plugin（SSM 插件）
+
+检查 AWS CLI 凭证是否配置并可用
+
+📦 使用说明
+保存脚本为 aws-env-check.sh
+
+给脚本执行权限：
+chmod +x aws-env-check.sh
+
+运行脚本：
+./aws-env-check.sh
