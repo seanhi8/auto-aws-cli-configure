@@ -1,0 +1,11 @@
+📦 使用方法
+保存为脚本文件（例如 check-and-install-aws.sh）
+
+赋予执行权限：
+chmod +x check-and-install-aws.sh
+
+运行脚本：
+./check-and-install-aws.sh
+
+📝 支持的 Linux 系统：
+Amazon Linux / RHEL / CentOS / Fedora（使用 yum 或 dnf）
